@@ -26,3 +26,15 @@ void print_triangle(int leftCol, int size)
   }
 }
 
+//Prints a arrow of specified height whose left edge is at col leftCol.
+void print_arrow(int leftCol, int size)
+{
+  print_triangle(leftCol, size);
+  int minCol = leftCol + size - 2, maxCol = leftCol + size + 2;
+  for (int row = 0; row < size; row++){
+    int col;
+    for (col = 0; col < minCol; col++) putchar(' ');
+    for (       ; col <= maxCol; col++) putchar('*');
+    putchar('\n');
+  }
+}
